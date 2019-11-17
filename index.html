@@ -9,15 +9,69 @@
         <title>Rock Paper Scissor</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-database.js"></script>
+        <link rel="shortcut icon" type="image/png" href="assets/images/fav-icon.png"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div class="container">
+            <!-- site title -->
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3"><img src="assets/images/rps.png" alt="rock paper scissors" height="150px"></div>
+                        <div class="col-md-9"><h1 class="display-3">Rock Paper Scissors</h1></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- game play section/row -->
+            <div class="row">
+                <!-- player 1 -->
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Player 1</h4>
+                        <button type="button" class="btn btn-primary btn-sm">Rock</button>
+                        <button type="button" class="btn btn-primary btn-sm">Paper</button>
+                        <button type="button" class="btn btn-primary btn-sm">Scissors</button>
+                    </div>
+                </div>
+
+                <!-- selection & score results -->
+                <div class="card col-md-4">
+                        <div class="card-body">
+
+                        </div>
+                    </div>
+
+                <!-- player 2 -->
+                <div class="card col-md-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Player 2</h4>
+                            <button type="button" class="btn btn-primary btn-sm">Rock</button>
+                            <button type="button" class="btn btn-primary btn-sm">Paper</button>
+                            <button type="button" class="btn btn-primary btn-sm">Scissors</button>
+                        </div>
+                </div>
+            </div>
+
+            <!-- chat section/row -->
+            <div class="row">
+                
+            </div>
+                  
+              
+        </div>
         
-        <script src="assets/javascript.app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="assets/javascript/app.js"></script>
     </body>
 </html>
