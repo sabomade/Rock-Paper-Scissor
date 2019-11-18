@@ -21,45 +21,65 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="container">
-            <!-- site title -->
+            <!-- site title jumbotron begin-->
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3"><img src="assets/images/rps.png" alt="rock paper scissors" height="150px"></div>
-                        <div class="col-md-9"><h1 class="display-3">Rock Paper Scissors</h1></div>
+                        <div class="col-md-9">
+                            <h1 class="display-3">Rock Paper Scissors</h1>
+                            <p>Add your name to begin play</p>
+                            <!-- form to enter player name begin -->
+                            <form class="form-inline" id="name-form">
+                                <label class="sr-only" for="name-input">Name</label>
+                                <input type="text" class="form-control mb-2 mr-sm-2 col-md-4" id="name-input" placeholder="Jane Doe">
+                                <button type="submit" class="btn btn-primary mb-2" id="add-name">Submit</button>
+                            </form> <!-- form end-->
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- jumbotron end-->
 
             <!-- game play section/row -->
             <div class="row">
                 <!-- player 1 -->
-                <div class="card col-md-4">
-                    <div class="card-body">
-                        <h4 class="card-title">Player 1</h4>
-                        <button type="button" class="btn btn-primary btn-sm">Rock</button>
-                        <button type="button" class="btn btn-primary btn-sm">Paper</button>
-                        <button type="button" class="btn btn-primary btn-sm">Scissors</button>
-                    </div>
-                </div>
-
-                <!-- selection & score results -->
-                <div class="card col-md-4">
+                <div class="col-md-4">
+                    <div class="card">
                         <div class="card-body">
-
-                        </div>
-                    </div>
-
-                <!-- player 2 -->
-                <div class="card col-md-4">
-                        <div class="card-body">
-                            <h4 class="card-title">Player 2</h4>
+                            <h4 class="card-title" id="player1-name">Player 1</h4>
                             <button type="button" class="btn btn-primary btn-sm">Rock</button>
                             <button type="button" class="btn btn-primary btn-sm">Paper</button>
                             <button type="button" class="btn btn-primary btn-sm">Scissors</button>
                         </div>
+                        <div class="card-footer">score stats</div>
+                    </div>
                 </div>
-            </div>
+
+                <!-- selection & score results -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>player 1 chose<span id="p1Choice"></span></p>
+                            <p>player 2 chose<span id="p2Choice"></span></p>
+                            <p><span id="game-result">x choice wins || tie</span></p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- player 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" id="player2-name">Player 2</h4>
+                            <button type="button" class="btn btn-primary btn-sm">Rock</button>
+                            <button type="button" class="btn btn-primary btn-sm">Paper</button>
+                            <button type="button" class="btn btn-primary btn-sm">Scissors</button>
+                        </div>
+                        <div class="card-footer">score stats</div>
+                    </div>
+                </div>
+            </div> <!-- game play section/row end-->
 
             <!-- chat section/row -->
             <div class="row">
