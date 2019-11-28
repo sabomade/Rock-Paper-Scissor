@@ -22,10 +22,7 @@ $(document).ready(function() {
     var database = firebase.database();
 
     //connections directory set up
-    var connectionsRef = database.ref("/players");
-
-    //location in database where client's connection status is stored, auto updates. True if connected, False if not connected.
-    var connectedRef = database.ref(".info/connected");
+    var playersRef = database.ref("/players");
 
     //player objects
     var player1 = null;
@@ -47,40 +44,67 @@ $(document).ready(function() {
 
     // FUNCTIONS
     //================================
-    //when client's connection state changes
-    connectedRef.on("value", function(snap){
-        //does player 1 exixt in database
-        //if connected
-        if (snap.val()){
-            //add user to database
-            var player = connectionsRef.push(true);
-            //remove from database when disconnected
-            player.onDisconnect().remove();
+    //----------DATABASE START----------
+    //listener for when page first loads or players list changes
+    playersRef.on("value", function(snap){
+        //if player 1 exists
+        if (snap.child('player1').exists()){
+            //record player1 name
+            player1 = snap.val().player1;
+            player1Name = player1.name;
+
+            //write player1 info to DOM
+
+        }
+        //else player1 does not exist
+        else{
+            player1 = null;
+            player1Name = "";
+
+            //write "waiting..." to DOM
         }
 
-        //does player 2 exisit in database
+        //if player2 exists
+        if(snap.child('player2').exists()){
+            //record player2 name
+            player2 = snap.val().player2;
+            player2Name = player2.name;
+
+            //write player2 info to DOM
+
+        }
+        //else player2 does not exist
+        else{
+            player2 = null;
+            player2Name = "";
+
+            //write "waiting..." to DOM
+
+        }
+
+        //if both players exist, game play can begin
+        if( player1 && player2){
+            //it's player1's turn, update css
+
+            //write "waiting for player1 to choose..." to DOM
+
+        }
     });
+    //listener for when players leave the game
+    playersRef.on("child_removed", function(snap){
+        //[this] player has left the game
+        var note = snap.val().name + "has left the game";
 
-    //when page first loads or connections list changes
-    connectionsRef.on("value", function(snap){
-        var usersOnline = snap.numChildren();
+        //write note to DOM
 
-        if (usersOnline == 1){
-            //they are player 1, ask their name & write it to DOM
-            console.log(usersOnline, "players online");
+    });    
 
-            //message to DOM "waiting for playerr 2"
-        }
-        else if (usersOnline == 2){
-            //they are player 2, ask their name & write it to DOM
-            console.log(usersOnline, "players online");
+    //----------DATABASE END----------
 
-            //begin game, player 1 goes first
-        }
-        else if (usersOnline > 2){
-            //they cannot play yet...
-            console.log(usersOnline, "players online");
-        }
+    //----------ON BUTTON CLICK START----------
+    $("#add-name").on('click', function(){
+        
     })
-    
 });
+
+
