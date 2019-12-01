@@ -1,7 +1,7 @@
 # Rock-Paper-Scissor
 An online multiplayer Rock-Paper-Scissors game, utilizing Firebase for game play & chat functionality.
 
-![Image of rps game](assets/images/rps.png)
+![Image of rps game](assets/images/rps-game.png)
 
 ### How to Use
 
